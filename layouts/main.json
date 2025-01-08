@@ -271,53 +271,6 @@
       "assetStoreId": "",
       "bold": false,
       "italic": false,
-      "name": "scoretxt",
-      "smoothed": true,
-      "type": "TextObject::Text",
-      "underlined": false,
-      "variables": [],
-      "effects": [],
-      "behaviors": [
-        {
-          "name": "Tween",
-          "type": "Tween::TweenBehavior"
-        }
-      ],
-      "string": "Score:",
-      "font": "",
-      "textAlignment": "left",
-      "characterSize": 20,
-      "color": {
-        "b": 31,
-        "g": 232,
-        "r": 255
-      },
-      "content": {
-        "bold": false,
-        "isOutlineEnabled": false,
-        "isShadowEnabled": false,
-        "italic": false,
-        "outlineColor": "255;255;255",
-        "outlineThickness": 2,
-        "shadowAngle": 90,
-        "shadowBlurRadius": 2,
-        "shadowColor": "0;0;0",
-        "shadowDistance": 4,
-        "shadowOpacity": 127,
-        "smoothed": true,
-        "underlined": false,
-        "text": "Score:",
-        "font": "",
-        "textAlignment": "left",
-        "verticalTextAlignment": "top",
-        "characterSize": 20,
-        "color": "255;232;31"
-      }
-    },
-    {
-      "assetStoreId": "",
-      "bold": false,
-      "italic": false,
       "name": "timer",
       "smoothed": true,
       "type": "TextObject::Text",
@@ -2477,9 +2430,6 @@
         "objectName": "gun"
       },
       {
-        "objectName": "scoretxt"
-      },
-      {
         "objectName": "confetti"
       },
       {
@@ -2512,12 +2462,12 @@
         {
           "type": "BuiltinCommonInstructions::Comment",
           "color": {
-            "b": 109,
-            "g": 230,
-            "r": 255,
-            "textB": 0,
-            "textG": 0,
-            "textR": 0
+            "b": 27,
+            "g": 2,
+            "r": 208,
+            "textB": 255,
+            "textG": 255,
+            "textR": 255
           },
           "comment": "beginning of the scene"
         },
@@ -2534,6 +2484,16 @@
             }
           ],
           "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "score",
+                "=",
+                "0"
+              ]
+            },
             {
               "type": {
                 "value": "CountdownTimer::SetCountdown"
@@ -3198,7 +3158,7 @@
                                 "sword",
                                 "Resizable",
                                 "=",
-                                "min(sq::distance(CursorX(), temp.X, CursorY(), temp.Y), 10)"
+                                "min(sq::distance(CursorX(), temp.X, CursorY(), temp.Y), 7)"
                               ]
                             },
                             {
@@ -3284,7 +3244,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "timesup",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -3312,6 +3271,15 @@
           "actions": [
             {
               "type": {
+                "value": "PrioritizeLoadingOfScene"
+              },
+              "parameters": [
+                "",
+                "\"info\""
+              ]
+            },
+            {
+              "type": {
                 "value": "Wait"
               },
               "parameters": [
@@ -3329,6 +3297,20 @@
                 "185",
                 "\"easeOutQuint\"",
                 "2.5",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Tween::TweenBehavior::AddObjectOpacityTween2"
+              },
+              "parameters": [
+                "timer",
+                "Tween",
+                "\"fade\"",
+                "0",
+                "\"linear\"",
+                "2",
                 ""
               ]
             },
@@ -3381,9 +3363,68 @@
               "parameters": [
                 "2"
               ]
+            },
+            {
+              "type": {
+                "value": "Tween::TweenBehavior::AddObjectPositionTween2"
+              },
+              "parameters": [
+                "scoretxt",
+                "Tween",
+                "\"fade\"",
+                "(SceneWindowWidth()/2)-(scoretxt.Width()/2)",
+                "120",
+                "\"easeOutQuad\"",
+                "2",
+                "no"
+              ]
+            },
+            {
+              "type": {
+                "value": "Tween::TweenBehavior::AddObjectOpacityTween2"
+              },
+              "parameters": [
+                "timesup",
+                "Tween",
+                "\"fade\"",
+                "0",
+                "\"linear\"",
+                "2.5",
+                "yes"
+              ]
+            },
+            {
+              "type": {
+                "value": "Wait"
+              },
+              "parameters": [
+                "3"
+              ]
+            },
+            {
+              "type": {
+                "value": "Scene"
+              },
+              "parameters": [
+                "",
+                "\"info\"",
+                ""
+              ]
             }
           ]
-        },
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "name": "stuff",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
         {
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
@@ -3408,24 +3449,49 @@
               ]
             }
           ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "AnimatableCapability::AnimatableBehavior::HasAnimationEnded"
+              },
+              "parameters": [
+                "explo",
+                "Animation"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "explo",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "TextObject::Font"
+              },
+              "parameters": [
+                "all text",
+                "assets\\Times New Roman.ttf"
+              ]
+            }
+          ]
         }
       ],
       "parameters": []
-    },
-    {
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [],
-      "actions": [
-        {
-          "type": {
-            "value": "TextObject::Font"
-          },
-          "parameters": [
-            "all text",
-            "assets\\Times New Roman.ttf"
-          ]
-        }
-      ]
     }
   ],
   "layers": [

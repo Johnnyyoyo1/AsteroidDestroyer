@@ -1413,6 +1413,16 @@
             "EllipseMovement",
             ""
           ]
+        },
+        {
+          "type": {
+            "value": "SetNumberVariable"
+          },
+          "parameters": [
+            "score",
+            "=",
+            "0"
+          ]
         }
       ],
       "events": [
@@ -1548,6 +1558,15 @@
         }
       ],
       "actions": [
+        {
+          "type": {
+            "value": "Delete"
+          },
+          "parameters": [
+            "start",
+            ""
+          ]
+        },
         {
           "type": {
             "value": "PrioritizeLoadingOfScene"

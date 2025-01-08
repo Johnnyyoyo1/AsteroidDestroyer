@@ -1,5 +1,5 @@
 {
-  "firstLayout": "",
+  "firstLayout": "start",
   "gdVersion": {
     "build": 221,
     "major": 5,
@@ -1234,6 +1234,121 @@
         "name": "NewSprite119",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "file": "assets/Kenney Pixel.ttf",
+        "kind": "font",
+        "metadata": "",
+        "name": "490034af0b44b2d8e88911e4b30bf82a51e9fd67c1688a44a9c36e10ea360cd8_Kenney Pixel.ttf",
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Kenney Font Pack/490034af0b44b2d8e88911e4b30bf82a51e9fd67c1688a44a9c36e10ea360cd8_Kenney Pixel.ttf",
+          "name": "gdevelop-asset-store"
+        }
+      },
+      {
+        "file": "menubutton.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "menubutton.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "menubutton2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "menubutton2.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/menubutton2.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "menubutton2",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/menubutton3.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "menubutton3",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "submit.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "submit.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/submit.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\",\"localFilePath\":\"assets/submit.png\"}",
+        "name": "submit",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/submit2.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "submit2",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/submit3.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\",\"localFilePath\":\"assets/submit3.png\"}",
+        "name": "submit3",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/submit4.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "submit4",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/submit5.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\",\"localFilePath\":\"assets/submit5.png\"}",
+        "name": "submit5",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/submit6.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "submit6",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/submit7.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "submit7",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "submit.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "submit.jpg",
+        "smoothed": true,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -1579,7 +1694,30 @@
           "value": 5
         }
       ],
-      "effects": [],
+      "effects": [
+        {
+          "effectType": "Pixelate",
+          "name": "Effect",
+          "doubleParameters": {
+            "size": 3
+          },
+          "stringParameters": {},
+          "booleanParameters": {}
+        },
+        {
+          "effectType": "Glow",
+          "name": "Effect2",
+          "doubleParameters": {
+            "distance": 15,
+            "innerStrength": 1,
+            "outerStrength": 2
+          },
+          "stringParameters": {
+            "color": "230;8;35"
+          },
+          "booleanParameters": {}
+        }
+      ],
       "behaviors": [
         {
           "name": "Tween",
@@ -1820,6 +1958,53 @@
           ]
         }
       ]
+    },
+    {
+      "assetStoreId": "",
+      "bold": false,
+      "italic": true,
+      "name": "scoretxt",
+      "smoothed": true,
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ],
+      "string": "Score:",
+      "font": "assets\\Times New Roman.ttf",
+      "textAlignment": "left",
+      "characterSize": 20,
+      "color": {
+        "b": 31,
+        "g": 232,
+        "r": 255
+      },
+      "content": {
+        "bold": false,
+        "isOutlineEnabled": false,
+        "isShadowEnabled": false,
+        "italic": true,
+        "outlineColor": "255;255;255",
+        "outlineThickness": 2,
+        "shadowAngle": 90,
+        "shadowBlurRadius": 2,
+        "shadowColor": "0;0;0",
+        "shadowDistance": 4,
+        "shadowOpacity": 127,
+        "smoothed": true,
+        "underlined": false,
+        "text": "Score:",
+        "font": "assets\\Times New Roman.ttf",
+        "textAlignment": "left",
+        "verticalTextAlignment": "top",
+        "characterSize": 20,
+        "color": "255;232;31"
+      }
     }
   ],
   "objectsFolderStructure": {
@@ -1845,6 +2030,9 @@
       },
       {
         "objectName": "BlackSpace"
+      },
+      {
+        "objectName": "scoretxt"
       }
     ]
   },
@@ -1883,7 +2071,7 @@
     },
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
-      "referenceTo": "/layouts/untitled-scene"
+      "referenceTo": "/layouts/info"
     }
   ],
   "externalEvents": [],
