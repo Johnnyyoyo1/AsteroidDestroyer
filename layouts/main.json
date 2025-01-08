@@ -330,7 +330,7 @@
           "type": "Tween::TweenBehavior"
         }
       ],
-      "string": "Destroy the rocks",
+      "string": "Destroy the rocks.",
       "font": "",
       "textAlignment": "left",
       "characterSize": 20,
@@ -353,7 +353,7 @@
         "shadowOpacity": 127,
         "smoothed": true,
         "underlined": false,
-        "text": "Destroy the rocks",
+        "text": "Destroy the rocks.",
         "font": "",
         "textAlignment": "left",
         "verticalTextAlignment": "top",

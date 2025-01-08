@@ -9,7 +9,7 @@
   "title": "",
   "v": 209,
   "uiSettings": {
-    "grid": false,
+    "grid": true,
     "gridType": "rectangular",
     "gridWidth": 32,
     "gridHeight": 32,
@@ -17,7 +17,7 @@
     "gridOffsetY": 0,
     "gridColor": 10401023,
     "gridAlpha": 0.8,
-    "snap": false,
+    "snap": true,
     "zoomFactor": 1.3421887304828997,
     "windowMask": false
   },
@@ -34,7 +34,13 @@
       ]
     }
   ],
-  "variables": [],
+  "variables": [
+    {
+      "name": "submitted",
+      "type": "boolean",
+      "value": false
+    }
+  ],
   "instances": [
     {
       "angle": 0,
@@ -79,8 +85,8 @@
       "name": "name",
       "persistentUuid": "099e1b5a-d894-4bb9-b792-7c8b5f776e8c",
       "width": 200,
-      "x": 117,
-      "y": 206,
+      "x": 96,
+      "y": 192,
       "zOrder": 3,
       "numberProperties": [],
       "stringProperties": [],
@@ -95,8 +101,8 @@
       "name": "menubutton",
       "persistentUuid": "71629938-5bbc-48ca-9bcc-18ee607143a7",
       "width": 0,
-      "x": 164,
-      "y": 326,
+      "x": 168,
+      "y": 320,
       "zOrder": 4,
       "numberProperties": [],
       "stringProperties": [],
@@ -111,9 +117,42 @@
       "name": "submit",
       "persistentUuid": "c2219bbd-4432-4fbf-a6bf-d27fe917b2c0",
       "width": 0,
-      "x": 163,
-      "y": 272,
+      "x": 168,
+      "y": 256,
       "zOrder": 5,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 21,
+      "keepRatio": true,
+      "layer": "",
+      "name": "datatypecheck",
+      "persistentUuid": "f1783677-852e-40ae-b833-5c3cab9c13f7",
+      "width": 155,
+      "x": 101,
+      "y": 224,
+      "zOrder": 6,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "",
+      "name": "TBD",
+      "persistentUuid": "f8b87b75-ac56-41a8-996b-a7d1a8554d1e",
+      "width": 0,
+      "x": 96,
+      "y": 160,
+      "zOrder": 7,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -170,8 +209,8 @@
           "IdleColorTint": "255;255;255",
           "FocusedColorTint": "192;192;192",
           "PressedColorTint": "64;64;64",
-          "FadeInDuration": 0.1,
-          "FadeOutDuration": 0.1,
+          "FadeInDuration": 0.01,
+          "FadeOutDuration": 0.01,
           "FadeInEasing": "easeOutExpo",
           "FadeOutEasing": "easeOutExpo",
           "PreviousState": "Idle"
@@ -247,21 +286,21 @@
       "assetStoreId": "",
       "bold": false,
       "italic": false,
-      "name": "NewText",
+      "name": "datatypecheck",
       "smoothed": true,
       "type": "TextObject::Text",
       "underlined": false,
       "variables": [],
       "effects": [],
       "behaviors": [],
-      "string": "Text",
-      "font": "",
+      "string": "Letters and numbers only.",
+      "font": "assets\\Times New Roman.ttf",
       "textAlignment": "left",
-      "characterSize": 20,
+      "characterSize": 15,
       "color": {
         "b": 0,
         "g": 0,
-        "r": 0
+        "r": 255
       },
       "content": {
         "bold": false,
@@ -277,12 +316,12 @@
         "shadowOpacity": 127,
         "smoothed": true,
         "underlined": false,
-        "text": "Text",
-        "font": "",
+        "text": "Letters and numbers only.",
+        "font": "assets\\Times New Roman.ttf",
         "textAlignment": "left",
         "verticalTextAlignment": "top",
-        "characterSize": 20,
-        "color": "0;0;0"
+        "characterSize": 15,
+        "color": "255;0;0"
       }
     },
     {
@@ -302,10 +341,10 @@
           "IdleColorTint": "255;255;255",
           "FocusedColorTint": "192;192;192",
           "PressedColorTint": "64;64;64",
-          "FadeInDuration": 0,
-          "FadeOutDuration": 0,
-          "FadeInEasing": "easeInOutQuad",
-          "FadeOutEasing": "easeInOutQuad",
+          "FadeInDuration": 0.01,
+          "FadeOutDuration": 0.01,
+          "FadeInEasing": "easeOutExpo",
+          "FadeOutEasing": "easeOutExpo",
           "PreviousState": "Idle"
         },
         {
@@ -373,6 +412,48 @@
           ]
         }
       ]
+    },
+    {
+      "assetStoreId": "",
+      "bold": false,
+      "italic": false,
+      "name": "TBD",
+      "smoothed": true,
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "string": "Leaderboard TBD\nName will not be submitted",
+      "font": "",
+      "textAlignment": "left",
+      "characterSize": 10,
+      "color": {
+        "b": 255,
+        "g": 255,
+        "r": 255
+      },
+      "content": {
+        "bold": false,
+        "isOutlineEnabled": false,
+        "isShadowEnabled": false,
+        "italic": false,
+        "outlineColor": "255;255;255",
+        "outlineThickness": 2,
+        "shadowAngle": 90,
+        "shadowBlurRadius": 2,
+        "shadowColor": "0;0;0",
+        "shadowDistance": 4,
+        "shadowOpacity": 127,
+        "smoothed": true,
+        "underlined": false,
+        "text": "Leaderboard TBD\nName will not be submitted",
+        "font": "",
+        "textAlignment": "left",
+        "verticalTextAlignment": "top",
+        "characterSize": 10,
+        "color": "255;255;255"
+      }
     }
   ],
   "objectsFolderStructure": {
@@ -388,7 +469,10 @@
         "objectName": "submit"
       },
       {
-        "objectName": "NewText"
+        "objectName": "datatypecheck"
+      },
+      {
+        "objectName": "TBD"
       }
     ]
   },
@@ -483,9 +567,317 @@
             "ButtonFSM",
             ""
           ]
+        },
+        {
+          "type": {
+            "value": "BooleanVariable"
+          },
+          "parameters": [
+            "submitted",
+            "False",
+            ""
+          ]
         }
       ],
-      "actions": []
+      "actions": [
+        {
+          "type": {
+            "value": "SetBooleanVariable"
+          },
+          "parameters": [
+            "submitted",
+            "True",
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "BuiltinCommonInstructions::Or"
+          },
+          "parameters": [],
+          "subInstructions": [
+            {
+              "type": {
+                "inverted": true,
+                "value": "InputValidation::lettersandnums"
+              },
+              "parameters": [
+                "",
+                "name.Text::Value()",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::CompareNumbers"
+              },
+              "parameters": [
+                "StrLength(name.Text::Value())",
+                ">",
+                "12"
+              ]
+            }
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "Montre"
+          },
+          "parameters": [
+            "datatypecheck",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "ActivateBehavior"
+          },
+          "parameters": [
+            "submit",
+            "ButtonFSM",
+            "no"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::CompareNumbers"
+              },
+              "parameters": [
+                "StrLength(name.Text::Value())",
+                ">",
+                "12"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
+                "datatypecheck",
+                "Text",
+                "=",
+                "\"12 characters only.\""
+              ]
+            },
+            {
+              "type": {
+                "value": "ChangeColor"
+              },
+              "parameters": [
+                "submit",
+                "\"71;71;71\""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": true,
+                "value": "InputValidation::lettersandnums"
+              },
+              "parameters": [
+                "",
+                "name.Text::Value()",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
+                "datatypecheck",
+                "Text",
+                "=",
+                "\"Letters and numbers only.\""
+              ]
+            },
+            {
+              "type": {
+                "value": "ChangeColor"
+              },
+              "parameters": [
+                "submit",
+                "\"71;71;71\""
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "InputValidation::lettersandnums"
+          },
+          "parameters": [
+            "",
+            "name.Text::Value()",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "BuiltinCommonInstructions::CompareNumbers"
+          },
+          "parameters": [
+            "StrLength(name.Text::Value())",
+            "<=",
+            "12"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "Cache"
+          },
+          "parameters": [
+            "datatypecheck"
+          ]
+        },
+        {
+          "type": {
+            "value": "ActivateBehavior"
+          },
+          "parameters": [
+            "submit",
+            "ButtonFSM",
+            "yes"
+          ]
+        },
+        {
+          "type": {
+            "value": "ChangeColor"
+          },
+          "parameters": [
+            "submit",
+            "\"255;255;255\""
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "BuiltinCommonInstructions::CompareNumbers"
+          },
+          "parameters": [
+            "StrLength(name.Text::Value())",
+            "<=",
+            "0"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "ActivateBehavior"
+          },
+          "parameters": [
+            "submit",
+            "ButtonFSM",
+            "no"
+          ]
+        },
+        {
+          "type": {
+            "value": "ChangeColor"
+          },
+          "parameters": [
+            "submit",
+            "\"71;71;71\""
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "BooleanVariable"
+          },
+          "parameters": [
+            "submitted",
+            "True",
+            ""
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "ChangeColor"
+          },
+          "parameters": [
+            "submit",
+            "\"71;71;71\""
+          ]
+        },
+        {
+          "type": {
+            "value": "ActivateBehavior"
+          },
+          "parameters": [
+            "submit",
+            "ButtonFSM",
+            "no"
+          ]
+        },
+        {
+          "type": {
+            "value": "Montre"
+          },
+          "parameters": [
+            "datatypecheck",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+          },
+          "parameters": [
+            "datatypecheck",
+            "Text",
+            "=",
+            "\"Submitted\""
+          ]
+        },
+        {
+          "type": {
+            "value": "TextInput::TextInputObject::SetReadOnly"
+          },
+          "parameters": [
+            "name",
+            "yes"
+          ]
+        }
+      ]
     }
   ],
   "layers": [

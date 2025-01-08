@@ -64,6 +64,11 @@
       "name": "started",
       "type": "boolean",
       "value": false
+    },
+    {
+      "name": "ready",
+      "type": "boolean",
+      "value": false
     }
   ],
   "instances": [
@@ -1423,6 +1428,24 @@
             "=",
             "0"
           ]
+        },
+        {
+          "type": {
+            "value": "Wait"
+          },
+          "parameters": [
+            "2"
+          ]
+        },
+        {
+          "type": {
+            "value": "SetBooleanVariable"
+          },
+          "parameters": [
+            "ready",
+            "True",
+            "0"
+          ]
         }
       ],
       "events": [
@@ -1538,248 +1561,266 @@
       "conditions": [
         {
           "type": {
-            "value": "ButtonStates::ButtonFSM::IsClicked"
-          },
-          "parameters": [
-            "BlackSpace",
-            "ButtonFSM",
-            ""
-          ]
-        },
-        {
-          "type": {
             "value": "BooleanVariable"
           },
           "parameters": [
-            "started",
-            "False",
+            "ready",
+            "True",
             ""
           ]
         }
       ],
-      "actions": [
+      "actions": [],
+      "events": [
         {
-          "type": {
-            "value": "Delete"
-          },
-          "parameters": [
-            "start",
-            ""
-          ]
-        },
-        {
-          "type": {
-            "value": "PrioritizeLoadingOfScene"
-          },
-          "parameters": [
-            "",
-            "\"main\""
-          ]
-        },
-        {
-          "type": {
-            "value": "SetBooleanVariable"
-          },
-          "parameters": [
-            "started",
-            "True",
-            ""
-          ]
-        },
-        {
-          "type": {
-            "value": "Create"
-          },
-          "parameters": [
-            "",
-            "StoneNophy",
-            "-150",
-            "-150",
-            "\"rock\""
-          ]
-        },
-        {
-          "type": {
-            "value": "Create"
-          },
-          "parameters": [
-            "",
-            "partic",
-            "-150",
-            "-150",
-            "\"fire\""
-          ]
-        },
-        {
-          "type": {
-            "value": "Sticker::Sticker::Stick"
-          },
-          "parameters": [
-            "partic",
-            "Sticker",
-            "StoneNophy",
-            "-150"
-          ]
-        },
-        {
-          "type": {
-            "value": "Tween::TweenBehavior::AddObjectPositionTween2"
-          },
-          "parameters": [
-            "StoneNophy",
-            "Tween",
-            "\"crash\"",
-            "200",
-            "130",
-            "\"easeOutCirc\"",
-            "3",
-            "yes"
-          ]
-        },
-        {
-          "type": {
-            "value": "Tween::TweenBehavior::AddObjectScaleTween3"
-          },
-          "parameters": [
-            "StoneNophy",
-            "Tween",
-            "\"shrink\"",
-            "0.04",
-            "\"easeInOutSine\"",
-            "2",
-            "2",
-            "yes"
-          ]
-        },
-        {
-          "type": {
-            "value": "Tween::TweenBehavior::AddObjectOpacityTween2"
-          },
-          "parameters": [
-            "partic",
-            "Tween",
-            "\"fade\"",
-            "0.04",
-            "\"easeInOutSine\"",
-            "2",
-            "2"
-          ]
-        },
-        {
-          "type": {
-            "value": "Wait"
-          },
-          "parameters": [
-            "3"
-          ]
-        },
-        {
-          "type": {
-            "value": "Create"
-          },
-          "parameters": [
-            "",
-            "before",
-            "200",
-            "130",
-            "\"explo\""
-          ]
-        },
-        {
-          "type": {
-            "value": "Delete"
-          },
-          "parameters": [
-            "partic",
-            ""
-          ]
-        },
-        {
-          "type": {
-            "value": "Delete"
-          },
-          "parameters": [
-            "Stone",
-            ""
-          ]
-        },
-        {
-          "type": {
-            "value": "Wait"
-          },
-          "parameters": [
-            "1"
-          ]
-        },
-        {
-          "type": {
-            "value": "Create"
-          },
-          "parameters": [
-            "",
-            "explosion",
-            "200",
-            "130",
-            "\"explo\""
-          ]
-        },
-        {
-          "type": {
-            "value": "Tween::TweenBehavior::AddObjectScaleTween3"
-          },
-          "parameters": [
-            "explosion",
-            "Tween",
-            "\"blowup\"",
-            "20",
-            "\"easeInQuint\"",
-            "1",
-            "",
-            ""
-          ]
-        },
-        {
-          "type": {
-            "value": "Wait"
-          },
-          "parameters": [
-            "1"
-          ]
-        },
-        {
-          "type": {
-            "value": "Delete"
-          },
-          "parameters": [
-            "center",
-            ""
-          ]
-        },
-        {
-          "type": {
-            "value": "Delete"
-          },
-          "parameters": [
-            "star",
-            ""
-          ]
-        },
-        {
-          "type": {
-            "value": "Wait"
-          },
-          "parameters": [
-            "1.5"
-          ]
-        },
-        {
-          "type": {
-            "value": "Scene"
-          },
-          "parameters": [
-            "",
-            "\"main\"",
-            ""
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "ButtonStates::ButtonFSM::IsClicked"
+              },
+              "parameters": [
+                "BlackSpace",
+                "ButtonFSM",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "BooleanVariable"
+              },
+              "parameters": [
+                "started",
+                "False",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "start",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "PrioritizeLoadingOfScene"
+              },
+              "parameters": [
+                "",
+                "\"main\""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetBooleanVariable"
+              },
+              "parameters": [
+                "started",
+                "True",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "StoneNophy",
+                "-150",
+                "-150",
+                "\"rock\""
+              ]
+            },
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "partic",
+                "-150",
+                "-150",
+                "\"fire\""
+              ]
+            },
+            {
+              "type": {
+                "value": "Sticker::Sticker::Stick"
+              },
+              "parameters": [
+                "partic",
+                "Sticker",
+                "StoneNophy",
+                "-150"
+              ]
+            },
+            {
+              "type": {
+                "value": "Tween::TweenBehavior::AddObjectPositionTween2"
+              },
+              "parameters": [
+                "StoneNophy",
+                "Tween",
+                "\"crash\"",
+                "200",
+                "130",
+                "\"easeOutCirc\"",
+                "3",
+                "yes"
+              ]
+            },
+            {
+              "type": {
+                "value": "Tween::TweenBehavior::AddObjectScaleTween3"
+              },
+              "parameters": [
+                "StoneNophy",
+                "Tween",
+                "\"shrink\"",
+                "0.04",
+                "\"easeInOutSine\"",
+                "2",
+                "2",
+                "yes"
+              ]
+            },
+            {
+              "type": {
+                "value": "Tween::TweenBehavior::AddObjectOpacityTween2"
+              },
+              "parameters": [
+                "partic",
+                "Tween",
+                "\"fade\"",
+                "0.04",
+                "\"easeInOutSine\"",
+                "2",
+                "2"
+              ]
+            },
+            {
+              "type": {
+                "value": "Wait"
+              },
+              "parameters": [
+                "3"
+              ]
+            },
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "before",
+                "200",
+                "130",
+                "\"explo\""
+              ]
+            },
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "partic",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "Stone",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Wait"
+              },
+              "parameters": [
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "explosion",
+                "200",
+                "130",
+                "\"explo\""
+              ]
+            },
+            {
+              "type": {
+                "value": "Tween::TweenBehavior::AddObjectScaleTween3"
+              },
+              "parameters": [
+                "explosion",
+                "Tween",
+                "\"blowup\"",
+                "20",
+                "\"easeInQuint\"",
+                "1",
+                "",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Wait"
+              },
+              "parameters": [
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "center",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "star",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Wait"
+              },
+              "parameters": [
+                "1.5"
+              ]
+            },
+            {
+              "type": {
+                "value": "Scene"
+              },
+              "parameters": [
+                "",
+                "\"main\"",
+                ""
+              ]
+            }
           ]
         }
       ]
